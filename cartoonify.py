@@ -4,7 +4,7 @@ from tkinter import Tk, filedialog
 
 # Function to cartoonify the image
 def cartoonify_image(img_path):
-    # Read the image
+    #Read the image
     img = cv2.imread(img_path)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
@@ -17,10 +17,10 @@ def cartoonify_image(img_path):
     # Step 2: Color smoothing is gone
     color = cv2.bilateralFilter(img_rgb, d=9, sigmaColor=250, sigmaSpace=250)
 
-    # Step 3: Combine edges with smoothed color image
+    #Step 3: Combine edges with smoothed color image
     cartoon = cv2.bitwise_and(color, color, mask=edges)
 
-    # Display results
+    #Display results
     plt.figure(figsize=(10, 8))
     images = [img_rgb, edges, cartoon]
     titles = ['Original Image', 'Edges', 'Cartoonized Image']
@@ -34,7 +34,7 @@ def cartoonify_image(img_path):
     plt.tight_layout()
     plt.show()
 
-# Open file dialog to select an image
+#Open file dialog to select an image
 def select_and_cartoonify():
     root = Tk()
     root.withdraw()  # Hide the main Tk window
