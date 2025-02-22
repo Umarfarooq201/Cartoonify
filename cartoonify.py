@@ -14,7 +14,7 @@ def cartoonify_image(img_path):
     edges = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
                                   cv2.THRESH_BINARY, 9, 9)
 
-    # Step 2: Color smoothing is gone
+    #Step 2: Color smoothing is gone
     color = cv2.bilateralFilter(img_rgb, d=9, sigmaColor=250, sigmaSpace=250)
 
     #step 3: Combine edges with smoothed color image
